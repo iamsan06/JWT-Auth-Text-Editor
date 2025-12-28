@@ -1,0 +1,129 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3d2020;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 56rem;
+}
+
+.outer-border {
+    background-color: #7a3939;
+    padding: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.middle-layer {
+    background-color: #e4c4a8;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-card {
+    width: 100%;
+    max-width: 28rem;
+    background-color: #d8d8d8;
+    padding: 3rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+}
+
+.login-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.login-form {
+    margin-top: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    letter-spacing: 0.025em;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    box-shadow: 0 0 0 2px black;
+}
+
+.login-button {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #7a3939;
+    color: white;
+    border: none;
+    letter-spacing: 0.05em;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #5a2929;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .middle-layer {
+        padding: 1.5rem;
+    }
+    
+    .inner-card {
+        padding: 2rem;
+    }
+    
+    .title {
+        font-size: 1.875rem;
+    }
+    
+    .login-heading {
+        font-size: 1.25rem;
+    }
+}

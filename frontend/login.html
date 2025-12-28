@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor - Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="outer-border">
+      <div class="middle-layer">
+        <div class="inner-card">
+          <h1 class="title">TEXT EDITOR</h1>
+          <h2 class="login-heading">LOGIN</h2>
+
+          <form class="login-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+              <label for="username">ENTER USERNAME:</label>
+              <input id="username" type="text" required>
+            </div>
+
+            <div class="form-group">
+              <label for="password">ENTER PASSWORD:</label>
+              <input id="password" type="password" required>
+            </div>
+
+            <button type="submit" class="login-button">LOGIN</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ LOGIN SCRIPT (NO dashboard.js HERE) -->
+  <script>
+    async function handleLogin(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("http://localhost:5000/api/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          alert(data.message || "Login failed");
+          return;
+        }
+
+        // ✅ STORE JWT TOKEN
+        localStorage.setItem("token", data.token);
+
+        // ✅ REDIRECT TO DASHBOARD
+        window.location.href = "dashboard.html";
+
+      } catch (err) {
+        console.error(err);
+        alert("Server error");
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #3d2020;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 80rem;
+}
+
+.outer-border {
+  background-color: #7a3939;
+  padding: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.middle-layer {
+  background-color: #e4c4a8;
+  padding: 2rem;
+}
+
+.inner-editor-card {
+  background-color: #d8d8d8;
+  padding: 2rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.username {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.top-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.save-btn {
+  background-color: #7a3939;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #5a2929;
+}
+
+.logout-btn {
+  background-color: red;
+  color: black;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#editor {
+  flex: 1;
+  background-color: #e5e5e5;
+  padding: 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-y: auto;
+}
+
+#editor:empty::before {
+  content: "Start writing here...";
+  color: #777;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .middle-layer {
+    padding: 1rem;
+  }
+
+  .inner-editor-card {
+    padding: 1.5rem;
+  }
+
+  .username {
+    font-size: 1.4rem;
+  }
+}
