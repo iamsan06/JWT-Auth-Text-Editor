@@ -95,8 +95,4 @@ Backend Development, Web Technologies, and Security
 
 ⭐ If you like this project
 Give it a ⭐ on GitHub!
-
-yaml
-Copy code
-
 ---
